@@ -16,7 +16,7 @@ public class EcommerceMindhubApplication {
     @Bean
     //Instanciamos el repositorio
     public CommandLineRunner initData(ClientRepository clientRepository,
-                                      ShoppingCartRepository shoppingCartRepositories)  {
+                                      ShoppingCartRepository shoppingCartRepository)  {
         return (args) ->{
 
         };

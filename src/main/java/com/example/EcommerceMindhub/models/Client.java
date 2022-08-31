@@ -22,8 +22,8 @@ public class Client {
     /*@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     Set<ShoppingCart> shoppingCarts = new HashSet<>();*/
 
-    @OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
-    Set<ShoppingCart> shoppingCart=new HashSet<>();
+   // @OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
+    //Set<ShoppingCart> shoppingCart=new HashSet<>();
 
     public Client() {
     }
