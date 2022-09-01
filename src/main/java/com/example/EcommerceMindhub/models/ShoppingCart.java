@@ -15,12 +15,7 @@ public class ShoppingCart {
     public ShoppingCart() {
     }
 
-    /*public ShoppingCart(Long idClient){
-        this.idClient= idClient;
-    }
 
-    public Long getIdClient() {
-        return idClient;
-    }
-*/
+
+
 }

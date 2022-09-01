@@ -22,8 +22,8 @@ public class Client {
     /*@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     Set<ShoppingCart> shoppingCarts = new HashSet<>();*/
 
-   // @OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
-    //Set<ShoppingCart> shoppingCart=new HashSet<>();
+    /*@OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
+    Set<ShoppingCart> shoppingCart=new HashSet<>();*/
 
     public Client() {
     }
@@ -35,10 +35,6 @@ public class Client {
         this.adress=adress;
         this.password = password;
     }
-
-
-
-
 
     public Long getId() {
         return id;
@@ -80,6 +76,7 @@ public class Client {
         this.adress = adress;
     }
 
+
     public String getPassword() {
         return password;
     }
@@ -87,6 +84,14 @@ public class Client {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /*public Set<ShoppingCart> getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(Set<ShoppingCart> shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }*/
 
     @Override
     public String toString() {
