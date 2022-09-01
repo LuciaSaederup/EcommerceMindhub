@@ -16,20 +16,23 @@ public class Client {
     private String firstName;
     private String lastName;
     private String email;
-    private String address;
+    private String adress;
     private String password;
 
-    @OneToOne(mappedBy="cart")
-    private ShoppingCart shoppingCart;
+    /*@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    Set<ShoppingCart> shoppingCarts = new HashSet<>();*/
+
+    /*@OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
+    Set<ShoppingCart> shoppingCart=new HashSet<>();*/
 
     public Client() {
     }
 
-    public Client(String firstName, String lastName, String email, String address, String password) {
+    public Client(String firstName, String lastName, String email, String adress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.address = address;
+        this.adress=adress;
         this.password = password;
     }
 
@@ -65,12 +68,12 @@ public class Client {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
 

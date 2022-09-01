@@ -2,7 +2,10 @@ package com.example.EcommerceMindhub.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
@@ -20,19 +23,17 @@ public class PurchaseOrder {
     private Date creationDate;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="shoppingCart_id")
-    private ShoppingCart shoppingCart;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="product_id")
-    private Product product;
+    //Falta la relación con Product
+
+
+
     public PurchaseOrder() {
     }
 
-    public PurchaseOrder(int quantity, double price) {
+    public PurchaseOrder(int quantity, double price, Date creationDate) {
         this.quantity = quantity;
         this.price = price;
-        this.creationDate = new Date();
+        this.creationDate = creationDate;
     }
 
     public Long getId() {
@@ -59,19 +60,12 @@ public class PurchaseOrder {
         this.price = price;
     }
 
-    public ShoppingCart getShoppingCart() {
-        return shoppingCart;
-    }
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        this.shoppingCart = shoppingCart;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     @Override
