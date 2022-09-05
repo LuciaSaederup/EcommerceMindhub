@@ -3,6 +3,7 @@ package com.example.EcommerceMindhub.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,23 +17,20 @@ public class Client {
     private String firstName;
     private String lastName;
     private String email;
-    private String adress;
+    private String address;
     private String password;
 
-    /*@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-    Set<ShoppingCart> shoppingCarts = new HashSet<>();*/
-
-    /*@OneToOne(mappedBy = "client", fetch = FetchType.EAGER)
-    Set<ShoppingCart> shoppingCart=new HashSet<>();*/
+    @OneToOne(mappedBy="client")
+    private ShoppingCart shoppingCart;
 
     public Client() {
     }
 
-    public Client(String firstName, String lastName, String email, String adress, String password) {
+    public Client(String firstName, String lastName, String email, String address, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.adress=adress;
+        this.address = address;
         this.password = password;
     }
 
@@ -68,14 +66,21 @@ public class Client {
         this.email = email;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
 
     public String getPassword() {
         return password;
@@ -85,10 +90,10 @@ public class Client {
         this.password = password;
     }
 
-    public void addShoppingCart(ShoppingCart shoppingCart) {
+    /*public void addShoppingCart(ShoppingCart shoppingCart) {
         shoppingCart.setClient(this);
         shoppingCart.add(shoppingCart);
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -99,4 +104,4 @@ public class Client {
                 ", email='" + email + '\'' +
                 '}';
     }
-}
+ }
