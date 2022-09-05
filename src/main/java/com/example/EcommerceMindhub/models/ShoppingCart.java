@@ -11,7 +11,7 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
 
-    private Long id;
+    private long id;
 
     public ShoppingCart(Client client) {
         this.client=client;
@@ -39,6 +39,11 @@ public class ShoppingCart {
     public void setBills(Set<Bill> bills) {
         this.bills = bills;
     }
+
+    public ShoppingCart(long id) {
+        this.id = id;
+    }
+
     public Client getClient() {
         return client;
     }

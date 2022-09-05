@@ -28,6 +28,14 @@ public class Bill {
         this.shoppingCart = shoppingCart;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public double getPriceTotal() {
         return priceTotal;
     }
@@ -43,10 +51,6 @@ public class Bill {
 
     public void setShoppingCart(ShoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public void setId(Long id) {
